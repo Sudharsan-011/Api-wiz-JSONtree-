@@ -1,0 +1,9 @@
+@import "tailwindcss";
+/* Tailwind-based shadow */
+.shadow-lg { 
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+/* Glowing effect */
+.glow-effect {
+  box-shadow: 0 0 15px rgba(0, 204, 255, 0.8);  /* Light cyan glow */
+}
