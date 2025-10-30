@@ -3,7 +3,7 @@ import { useStore } from '../store/useStore';
 
 const SearchBar = () => {
   const [path, setPath] = useState('');
-  const { jsonData } = useStore();
+  const { jsonData,theme } = useStore();
 
   const handleSearch = () => {
     try {
@@ -15,13 +15,13 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="search-bar p-4 bg-white rounded-lg shadow-md max-w-md mx-auto flex items-center space-x-4">
+    <div className={`search-bar p-4  rounded-lg shadow-md max-w-md mx-auto flex items-center space-x-4 ${theme === 'light' ? 'bg-gray-100' : 'bg-gray-800'}`}>
   <input
     type="text"
     placeholder="S.user.address.city"
     value={path}
     onChange={(e) => setPath(e.target.value)}
-    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 placeholder-gray-400"
+    className={`w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none text-gray-800 placeholder-gray-400 ${theme === 'light' ? 'bg-white text-black' : 'bg-gray-800 text-white'}`}
   />
   <button
     onClick={handleSearch}
